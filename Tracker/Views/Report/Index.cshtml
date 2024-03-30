@@ -1,0 +1,249 @@
+﻿@model TrackerDomain.Dto.MovementDtoList
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="accordion accordion-flush">
+    <div class="accordion-item text-center">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <h3>Income Movements</h3>
+            </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">
+                <table class="table">
+                    <thead>
+                        @foreach (var item in Model.listIncomeMovements.Take(1))
+                        {
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.MovementDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Entity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Detail)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.SourceBook.BookName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Value)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.IsShared)
+                                </th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.listIncomeMovements)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MovementDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Entity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Detail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SourceBook.BookName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Value)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsShared)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <h3>Expense Movements</h3>
+            </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">
+                <table class="table">
+                    <thead>
+                        @foreach (var item in Model.listExpenseMovements.Take(1))
+                        {
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.MovementDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Entity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Detail)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.SourceBook.BookName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Value)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.IsShared)
+                                </th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.listExpenseMovements)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MovementDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Entity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Detail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SourceBook.BookName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Value)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsShared)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <h3>Transfer Movements</h3>
+            </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">
+                <table class="table">
+                    <thead>
+                        @foreach (var item in Model.listTransferMovements.Take(1))
+                        {
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.MovementDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Entity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Detail)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.SourceBook.BookName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.Value)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(Model => item.IsShared)
+                                </th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.listTransferMovements)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.MovementDate)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Entity)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Detail)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SourceBook.BookName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Value)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IsShared)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                <h3>Book Balance</h3>
+            </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+            <div class="accordion-body">
+                <table class="table">
+                    <thead>
+                        @foreach (var item in Model.listBook.Take(1))
+                        {
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => item.BookName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => item.Owner)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => item.Balance)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => item.Status)
+                                </th>
+                            </tr>
+                        }
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.listBook)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.BookName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Owner)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Balance)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status.StatusName)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

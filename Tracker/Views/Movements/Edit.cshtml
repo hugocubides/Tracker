@@ -1,0 +1,114 @@
+﻿@model TrackerDomain.Models.Movement
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Movement</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="MovementDate" class="control-label"></label>
+                <input asp-for="MovementDate" class="form-control" />
+                <span asp-validation-for="MovementDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entity" class="control-label"></label>
+                <input asp-for="Entity" class="form-control" />
+                <span asp-validation-for="Entity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MovementTypeId" class="control-label"></label>
+                <select asp-for="MovementTypeId" class="form-control" asp-items="ViewBag.MovementTypeId"></select>
+                <span asp-validation-for="MovementTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Detail" class="control-label"></label>
+                <input asp-for="Detail" class="form-control" />
+                <span asp-validation-for="Detail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SourceBookId" class="control-label"></label>
+                <select asp-for="SourceBookId" class="form-control" asp-items="ViewBag.SourceBookId"></select>
+                <span asp-validation-for="SourceBookId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinationBookId" class="control-label"></label>
+                <select asp-for="DestinationBookId" class="form-control" asp-items="ViewBag.DestinationBookId"></select>
+                <span asp-validation-for="DestinationBookId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DestinationOtherBookId" class="control-label"></label>
+                <select asp-for="DestinationOtherBookId" class="form-control" asp-items="ViewBag.DestinationOtherBookId"></select>
+                <span asp-validation-for="DestinationOtherBookId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Value" class="control-label"></label>
+                <input asp-for="Value" class="form-control" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Balance" class="control-label"></label>
+                <input asp-for="Balance" class="form-control" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ParentMovementId" class="control-label"></label>
+                <select asp-for="ParentMovementId" class="form-control" asp-items="ViewBag.ParentMovementId"></select>
+                <span asp-validation-for="ParentMovementId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsShared" /> @Html.DisplayNameFor(model => model.IsShared)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PayMovementId" class="control-label"></label>
+                <select asp-for="PayMovementId" class="form-control" asp-items="ViewBag.PayMovementId"></select>
+                <span asp-validation-for="PayMovementId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusId" class="control-label"></label>
+                <select asp-for="StatusId" class="form-control" asp-items="ViewBag.StatusId"></select>
+                <span asp-validation-for="StatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedAt" class="control-label"></label>
+                <input asp-for="CreatedAt" class="form-control" />
+                <span asp-validation-for="CreatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedAt" class="control-label"></label>
+                <input asp-for="UpdatedAt" class="form-control" />
+                <span asp-validation-for="UpdatedAt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedBy" class="control-label"></label>
+                <input asp-for="CreatedBy" class="form-control" />
+                <span asp-validation-for="CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdatedBy" class="control-label"></label>
+                <input asp-for="UpdatedBy" class="form-control" />
+                <span asp-validation-for="UpdatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
